@@ -1,29 +1,29 @@
 class Article 
   include Mongoid::Document 
   include Mongoid::Timestamps
-  include Mongoid::MultiParameterAttributes
+  # include Mongoid::MultiParameterAttributes
 
-  include MoustacheCms::Siteable
-  include MoustacheCms::StateSetable
-  include MoustacheCms::Published
-  include MoustacheCms::DefaultMetaTags
+  include MoustacheCMS2::Siteable
+  include MoustacheCMS2::StateSetable
+  include MoustacheCMS2::Published
+  include MoustacheCMS2::DefaultMetaTags
 
-  include Mongoid::Document::Taggable
+  include Mongoid::Tags
 
-  attr_accessible :title,
-                  :subheading,
-                  :img_url,
-                  :permalink,
-                  :slug,
-                  :content,
-                  :filter_name,
-                  :author_ids,
-                  :layout_id,
-                  :tag_list,
-                  :set_date,
-                  :date,
-                  :custom_fields_attributes,
-                  :commentable
+  # attr_accessible :title,
+  #                 :subheading,
+  #                 :img_url,
+  #                 :permalink,
+  #                 :slug,
+  #                 :content,
+  #                 :filter_name,
+  #                 :author_ids,
+  #                 :layout_id,
+  #                 :tag_list,
+  #                 :set_date,
+  #                 :date,
+  #                 :custom_fields_attributes,
+  #                 :commentable
 
   # -- Fields -----------
   field :title

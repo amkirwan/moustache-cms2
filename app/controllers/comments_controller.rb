@@ -10,7 +10,7 @@ class CommentsController < CmsSiteController
       flash[:notice] = "Thanks for the comment." 
       redirect_to request_permalink
     else
-      document = MoustacheCms::Mustache::CmsPage.new(self).render
+      document = MoustacheCMS2::Mustache::CmsPage.new(self).render
       render text: document.clean_html
     end
   end

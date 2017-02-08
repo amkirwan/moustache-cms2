@@ -1,5 +1,5 @@
 class AdminBaseController < ApplicationController
-  include MoustacheCms::FriendlyFilename
+  include MoustacheCMS2::FriendlyFilename
   protect_from_forgery   
 
   force_ssl if Rails.env == 'production'

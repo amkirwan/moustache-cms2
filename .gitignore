@@ -6,6 +6,8 @@ capistrano/*
 .rbenv-version
 .ruby-version
 *.swp
+*.swo
+config/database.yml
 db/*.sqlite3
 log/*.log
 tmp/**/*

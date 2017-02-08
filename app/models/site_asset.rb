@@ -1,7 +1,8 @@
 class SiteAsset < MoustacheAsset
-  include Mongoid::Document::Taggable
+  include Mongoid::Document
+  include Mongoid::Tags
 
-  attr_accessible :tag_list
+#   attr_accessible :tag_list
   
   # -- Fields ---
   mount_uploader :asset, SiteAssetUploader  

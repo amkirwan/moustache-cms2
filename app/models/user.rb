@@ -2,18 +2,18 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  include MoustacheCms::Siteable
-  include MoustacheCms::Deviseable
+  include MoustacheCMS2::Siteable
+  include MoustacheCMS2::Deviseable
   
    
-  attr_accessible :firstname,
-                  :middlename,
-                  :lastname,
-                  :email,
-                  :password,
-                  :password_confirmation, 
-                  :remember_me,
-                  :time_zone
+  # attr_accessible :firstname,
+  #                 :middlename,
+  #                 :lastname,
+  #                 :email,
+  #                 :password,
+  #                 :password_confirmation, 
+  #                 :remember_me,
+  #                 :time_zone
   
   # -- Fields -----------------------------------------------    
   field :username
@@ -59,7 +59,7 @@ class User
   validates :email,
             :presence => true,
             :uniqueness => { :scope => :site_id },
-            :format => { :with => /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i }
+            :format => { :with => /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i }
   
   validates :time_zone,
             :presence => true

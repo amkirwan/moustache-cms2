@@ -1,9 +1,11 @@
 require File.expand_path('../boot', __FILE__)
 
+require "active_model/railtie"
+require "active_job/railtie"
+# require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
-require "active_resource/railtie"
-require "rails/test_unit/railtie"
+require "action_view/railtie"
 require "sprockets/railtie"
 require "ostruct"
 
@@ -11,10 +13,10 @@ require "ostruct"
 # you've limited to :test, :development, or :production.
 
 if defined?(Bundler)
-  Bundler.require *Rails.groups(:assets => %w(development test))
+  Bundler.require(*Rails.groups)
 end
 
-module MoustacheCms
+module MoustacheCMS2
   class Application < Rails::Application 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -52,6 +54,7 @@ module MoustacheCms
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    config.assets.js_compressor = :uglifier
     config.assets.precompile += %w(login_focus.js ace_editor.js)
     
     # Settings in config/environments/* take precedence over those specified here.

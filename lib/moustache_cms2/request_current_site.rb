@@ -1,4 +1,4 @@
-module MoustacheCms
+module MoustacheCMS2
   module RequestCurrentSite
     def request_current_site(request_set = nil)
       if request_set.nil?

@@ -7,7 +7,7 @@ class CmsSiteController < ApplicationController
   
   def render_html
     if !@page.nil? && (@page.published? || current_admin_user)
-      document = MoustacheCms::Mustache::CmsPage.new(self).render
+      document = MoustacheCMS2::Mustache::CmsPage.new(self).render
       document = Redcarpet::Render::SmartyPants.render(document) unless request.xhr?
       response.etag = document
       if request.fresh?(response)

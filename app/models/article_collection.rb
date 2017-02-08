@@ -1,9 +1,9 @@
 class ArticleCollection < MoustacheCollection::Metal
 
-  attr_accessible :layout_id,
-                  :editor_ids,
-                  :permalink_prefix,
-                  :commentable
+  # attr_accessible :layout_id,
+  #                 :editor_ids,
+  #                 :permalink_prefix,
+  #                 :commentable
 
     # -- Fields --------------- 
   field :permalink_prefix, :type => Boolean, :default => false

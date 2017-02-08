@@ -2,9 +2,9 @@ class Layout
   include Mongoid::Document 
   include Mongoid::Timestamps
   
-  include MoustacheCms::Siteable
+  include MoustacheCMS2::Siteable
 
-  attr_accessible :name, :content
+#   attr_accessible :name, :content
 
   #-- Fields -----------------------------------------------  
   field :name

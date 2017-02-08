@@ -3,8 +3,7 @@ require 'carrierwave/processing/mime_types'
 class BaseAssetUploader < CarrierWave::Uploader::Base
   include CarrierWave::MimeTypes
 
-  include Sprockets::Helpers::RailsHelper
-  include Sprockets::Helpers::IsolatedHelper
+  include Sprockets::Rails::Helper
 
   storage :file
 

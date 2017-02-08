@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base 
-  include MoustacheCms::RequestCurrentSite
+  include MoustacheCMS2::RequestCurrentSite
 
   protect_from_forgery 
 

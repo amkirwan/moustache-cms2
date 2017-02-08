@@ -2,11 +2,11 @@ class MoustacheCollection
   include Mongoid::Document
   include Mongoid::Timestamps
   
-  include MoustacheCms::Siteable
-  include MoustacheCms::FriendlyFilename
-  include MoustacheCms::Collectable
+  include MoustacheCMS2::Siteable
+  include MoustacheCMS2::FriendlyFilename
+  include MoustacheCMS2::Collectable
 
-  attr_accessible :name
+  # attr_accessible :name
 
   # -- Field --
   field :name
@@ -20,7 +20,7 @@ class MoustacheCollection
             :uniqueness => { :scope => :site_id }
             
   class Metal < MoustacheCollection
-    include MoustacheCms::CreatedUpdatedBy
+    include MoustacheCMS2::CreatedUpdatedBy
   end
    
 end

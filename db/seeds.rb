@@ -10,7 +10,7 @@ admin = User.find_or_create_by(:firstname => "Admin", :lastname => "Moustache", 
   user.role = "admin"
   user.site_id = site.id
   user.password = "moustache"
-  user.time_zone = MoustacheCms::Application.config.time_zone
+  user.time_zone = MoustacheCMS2::Application.config.time_zone
 end
 
 # Create Layout

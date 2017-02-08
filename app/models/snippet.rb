@@ -2,9 +2,9 @@ class Snippet
   include Mongoid::Document
   include Mongoid::Timestamps
   
-  include MoustacheCms::Siteable
+  include MoustacheCMS2::Siteable
 
-  attr_accessible :name, :content, :filter_name
+#   attr_accessible :name, :content, :filter_name
   # -- Fields ----
   field :name
   field :content

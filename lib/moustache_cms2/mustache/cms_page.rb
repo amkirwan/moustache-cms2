@@ -1,6 +1,6 @@
 require 'haml'
 
-class MoustacheCms::Mustache::CmsPage < Mustache
+class MoustacheCMS2::Mustache::CmsPage < Mustache
 
   include AttributeMethods
   include MetaTags

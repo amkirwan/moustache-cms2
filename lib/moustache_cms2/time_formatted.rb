@@ -1,4 +1,4 @@
-module MoustacheCms
+module MoustacheCMS2
   class TimeFormatted
 
     @meth_prefix = ['', 'published_at_', 'created_at_', 'updated_at_']

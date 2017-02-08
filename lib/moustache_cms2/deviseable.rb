@@ -1,4 +1,4 @@
-module MoustacheCms
+module MoustacheCMS2
   module Deviseable
     extend ActiveSupport::Concern
 

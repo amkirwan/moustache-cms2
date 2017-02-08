@@ -1,6 +1,6 @@
 require 'builder'
 
-module MoustacheCms
+module MoustacheCMS2
   module Mustache
     module ArticleTags
 

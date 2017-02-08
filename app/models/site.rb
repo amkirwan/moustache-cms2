@@ -2,9 +2,9 @@ class Site
   include Mongoid::Document
   include Mongoid::Timestamps 
 
-  include MoustacheCms::DefaultMetaTags
+  include MoustacheCMS2::DefaultMetaTags
   
-  attr_accessible :name, :subdomain, :domain_names, :default_domain
+  # attr_accessible :name, :subdomain, :domain_names, :default_domain
   
   field :name
   field :subdomain

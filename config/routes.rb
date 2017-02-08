@@ -1,6 +1,6 @@
-require File.expand_path(File.join(Rails.root, 'lib', 'moustache_cms', 'articles_constraint'))
+require File.expand_path(File.join(Rails.root, 'lib', 'moustache_cms2', 'articles_constraint'))
 
-MoustacheCms::Application.routes.draw do   
+MoustacheCMS2::Application.routes.draw do   
 
   namespace :admin do
 
@@ -39,7 +39,7 @@ MoustacheCms::Application.routes.draw do
       end
     end
 
-    match 'articles/new_meta_tag' => 'articles#new_meta_tag', :as => 'articles_new_meta_tag'
+    get 'articles/new_meta_tag' => 'articles#new_meta_tag', :as => 'articles_new_meta_tag'
 
     resources :theme_collections do
       resources :theme_assets do
@@ -61,21 +61,21 @@ MoustacheCms::Application.routes.draw do
 
   resource :comments
 
-  match "/admin" => redirect("/admin/pages")
+  get "/admin" => redirect("/admin/pages")
 
   # filter articles by tag
-  match "*page_path/#{MoustacheCms::Application.config.filter}/:tag/page", to: redirect('/%{page_path}/#{MoustacheCms::Application.config.filter}')
-  match "*page_path/#{MoustacheCms::Application.config.filter}/:tag/page/:page" => 'cms_site#render_html', as: :articles_filter_page, :constraints => MoustacheCms::ArticlesConstraint.new
-  match "*page_path/#{MoustacheCms::Application.config.filter}/:tag" => 'cms_site#render_html', as: :articles_filter, :constraints => MoustacheCms::ArticlesConstraint.new
+  get "*page_path/#{MoustacheCMS2::Application.config.filter}/:tag/page", to: redirect('/%{page_path}/#{MoustacheCMS2::Application.config.filter}')
+  get "*page_path/#{MoustacheCMS2::Application.config.filter}/:tag/page/:page" => 'cms_site#render_html', as: :articles_filter_page, :constraints => MoustacheCMS2::ArticlesConstraint.new
+  get "*page_path/#{MoustacheCMS2::Application.config.filter}/:tag" => 'cms_site#render_html', as: :articles_filter, :constraints => MoustacheCMS2::ArticlesConstraint.new
 
-  # match paginated pages for a collection
-  match "*page_path/page", to: redirect('/%{page_path}')
-  match "*page_path/page/:page" => 'cms_site#render_html', :as => :articles_page, :constraints => MoustacheCms::ArticlesConstraint.new, page: /\d+/
-  match "page/:page" => 'cms_site#render_html', :constraints => { page: /\d+/ }
+  # get paginated pages for a collection
+  get "*page_path/page", to: redirect('/%{page_path}')
+  get "*page_path/page/:page" => 'cms_site#render_html', :as => :articles_page, :constraints => MoustacheCMS2::ArticlesConstraint.new, page: /\d+/
+  get "page/:page" => 'cms_site#render_html', :constraints => { page: /\d+/ }
 
   # find article
-  match "*articles/:year/:month/:day/:title" => 'cms_site#render_html', :as => :article_permalink, :constraints => MoustacheCms::ArticlesConstraint.new
-  match ":year/:month/:day/:title" => 'cms_site#render_html', :constraints => { :year => /\d{4}/, :month => /\d{1,2}/, :day => /\d{1,2}/ }
+  get "*articles/:year/:month/:day/:title" => 'cms_site#render_html', :as => :article_permalink, :constraints => MoustacheCMS2::ArticlesConstraint.new
+  get ":year/:month/:day/:title" => 'cms_site#render_html', :constraints => { :year => /\d{4}/, :month => /\d{1,2}/, :day => /\d{1,2}/ }
 
   scope :controller => "cms_site" do
     get "/" => :render_html, :as => "cms_html", :path => '(*page_path)'

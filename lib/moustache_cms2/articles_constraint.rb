@@ -1,6 +1,6 @@
-module MoustacheCms
+module MoustacheCMS2
   class ArticlesConstraint
-    include MoustacheCms::RequestCurrentSite
+    include MoustacheCMS2::RequestCurrentSite
 
     def matches?(request)
       articles(request).map { |a| a.name }.include?(request.params[:articles] || request.params[:page_path])

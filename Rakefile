@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-MoustacheCms::Application.load_tasks
+MoustacheCMS2::Application.load_tasks

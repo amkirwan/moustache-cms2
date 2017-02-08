@@ -1,9 +1,9 @@
-module MoustacheCms
+module MoustacheCMS2
   module DefaultMetaTags
     extend ActiveSupport::Concern
 
     included do
-      attr_accessible :meta_tags_attributes
+      # attr_accessible :meta_tags_attributes
 
       embeds_many :meta_tags, :as => :meta_taggable
       accepts_nested_attributes_for :meta_tags

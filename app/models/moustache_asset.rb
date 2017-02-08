@@ -2,15 +2,15 @@ class MoustacheAsset
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  include MoustacheCms::CalcMd5
+  include MoustacheCMS2::CalcMd5
 
-  attr_accessible :name,
-                  :description,
-                  :content_type,
-                  :width,
-                  :height,
-                  :file_size,
-                  :asset
+  # attr_accessible :name,
+  #                 :description,
+  #                 :content_type,
+  #                 :width,
+  #                 :height,
+  #                 :file_size,
+  #                 :asset
 
   # -- Fields ---
   field :name
@@ -21,7 +21,7 @@ class MoustacheAsset
   field :creator_id
   field :updator_id
   field :asset
-  field :site_id, type: Moped::BSON::ObjectId
+  field :site_id, type: ::BSON::ObjectId
 
   mount_uploader :asset, BaseAssetUploader 
 

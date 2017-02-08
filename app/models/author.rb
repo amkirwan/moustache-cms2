@@ -2,20 +2,20 @@ class Author
   include Mongoid::Document 
   include Mongoid::Timestamps
 
-  include MoustacheCms::Siteable
-  include MoustacheCms::CalcMd5
+  include MoustacheCMS2::Siteable
+  include MoustacheCMS2::CalcMd5
 
-  attr_accessible :prefix,
-                  :firstname,
-                  :middlename,
-                  :lastname,
-                  :honorific_suffix,
-                  :title,
-                  :organization,
-                  :image,
-                  :image_cache,
-                  :custom_fields_attributes,
-                  :profile
+  # attr_accessible :prefix,
+  #                 :firstname,
+  #                 :middlename,
+  #                 :lastname,
+  #                 :honorific_suffix,
+  #                 :title,
+  #                 :organization,
+  #                 :image,
+  #                 :image_cache,
+  #                 :custom_fields_attributes,
+  #                 :profile
 
   # -- Fields ------
   field :prefix

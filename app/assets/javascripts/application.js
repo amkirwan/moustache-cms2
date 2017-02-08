@@ -1,7 +1,6 @@
 //= require login_focus
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
 //= require externals
 //= require admin/ace
 //= require admin/pages

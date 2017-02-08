@@ -2,28 +2,28 @@ class Page
   include Mongoid::Document 
   include Mongoid::Timestamps
  
-  include MoustacheCms::Siteable
-  include MoustacheCms::CreatedUpdatedBy
-  include MoustacheCms::StateSetable
-  include MoustacheCms::Published
-  include MoustacheCms::DefaultMetaTags
+  include MoustacheCMS2::Siteable
+  include MoustacheCMS2::CreatedUpdatedBy
+  include MoustacheCMS2::StateSetable
+  include MoustacheCMS2::Published
+  include MoustacheCMS2::DefaultMetaTags
 
   include Mongoid::Tree 
   include Mongoid::Tree::Ordering
-  include Mongoid::Document::Taggable
+  include Mongoid::Tags
 
-  attr_accessible :parent_id,
-                  :title, 
-                  :slug,
-                  :full_path,
-                  :breadcrumb,
-                  :editor_ids,
-                  :layout_id,
-                  :page_parts,
-                  :page_parts_attributes,
-                  :post_container,
-                  :custom_fields_attributes,
-                  :tag_list
+  # attr_accessible :parent_id,
+  #                 :title, 
+  #                 :slug,
+  #                 :full_path,
+  #                 :breadcrumb,
+  #                 :editor_ids,
+  #                 :layout_id,
+  #                 :page_parts,
+  #                 :page_parts_attributes,
+  #                 :post_container,
+  #                 :custom_fields_attributes,
+  #                 :tag_list
                   
   # -- Fields -----------------------------
   field :title

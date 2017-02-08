@@ -14,7 +14,7 @@ class Comment
   field :user_agent
   field :referrer
 
-  attr_accessible :author, :author_email, :author_url, :content
+#   attr_accessible :author, :author_email, :author_url, :content
 
   # --- validations -------
   validates :author, presence: true

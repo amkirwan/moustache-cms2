@@ -1,8 +1,8 @@
 class ThemeAsset 
   include Mongoid::Document
-  include MoustacheCms::Siteable
+  include MoustacheCMS2::Siteable
 
-  attr_accessible :filename, :content_type, :pathname, :logical_path, :digest_path, :site, :theme_collection
+  # attr_accessible :filename, :content_type, :pathname, :logical_path, :digest_path, :site, :theme_collection
 
   # -- fields ---
   field :filename

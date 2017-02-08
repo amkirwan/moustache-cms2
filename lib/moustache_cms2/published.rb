@@ -1,4 +1,4 @@
-module MoustacheCms
+module MoustacheCMS2
   module Published
     def published?
       self.current_state.published?

@@ -1,11 +1,11 @@
 require 'time_formatted'
 
-module MoustacheCms
+module MoustacheCMS2
   module StateSetable
     extend ActiveSupport::Concern
 
     included do
-      attr_accessible :current_state, :current_state_attributes
+      # attr_accessible :current_state, :current_state_attributes
 
       embeds_one :current_state, 
                  :as => :publishable,
@@ -17,12 +17,12 @@ module MoustacheCms
 
     end
 
-    MoustacheCms::TimeFormatted.instance_methods(false).each do |method|
+    MoustacheCMS2::TimeFormatted.instance_methods(false).each do |method|
       delegate method, :to => :current_state_humanize, :allow_nil => true
     end
 
     def current_state_humanize
-      MoustacheCms::TimeFormatted.new(self)
+      MoustacheCMS2::TimeFormatted.new(self)
     end
 
   end

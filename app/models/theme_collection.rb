@@ -2,13 +2,13 @@ class ThemeCollection
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  include MoustacheCms::Siteable
-  include MoustacheCms::CreatedUpdatedBy
+  include MoustacheCMS2::Siteable
+  include MoustacheCMS2::CreatedUpdatedBy
   # -- Callbacks ---
   
   created_updated(:theme_collections)
   
-  attr_accessible :name
+  # attr_accessible :name
 
   # -- Fields ---
   field :name
