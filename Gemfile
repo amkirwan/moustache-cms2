@@ -6,8 +6,6 @@ gem "sass-rails"
 gem "coffee-rails"
 gem "uglifier"
 
-gem "coffee-rails"
-
 gem "jquery-rails"
 gem "haml-rails"
 
@@ -18,7 +16,7 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 # authorization
 gem "devise" 
-gem "cancancan"  # must come after mongoid in Gemfile
+gem "cancancan", "~> 1.15"  # must come after mongoid in Gemfile
 
 # use until move to strong params
 gem 'protected_attributes'

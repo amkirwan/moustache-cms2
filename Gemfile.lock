@@ -267,7 +267,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth (~> 4.2)
-  cancancan
+  cancancan (~> 1.15)
   capybara
   carrierwave-mongoid
   coffee-rails
