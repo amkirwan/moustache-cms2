@@ -13,7 +13,6 @@ gem "haml-rails"
 
 # mongoid
 gem "mongoid", "~> 5.1"
-gem 'mongoid-tags'
 gem 'mongoid-tree', :require => 'mongoid/tree'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 

@@ -10,7 +10,7 @@ class Page
 
   include Mongoid::Tree 
   include Mongoid::Tree::Ordering
-  include Mongoid::Tags
+  include MoustacheCMS2::Taggable
 
   # attr_accessible :parent_id,
   #                 :title, 
