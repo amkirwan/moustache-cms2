@@ -8,7 +8,7 @@ class Article
   include MoustacheCMS2::Published
   include MoustacheCMS2::DefaultMetaTags
 
-  include Mongoid::Tags
+  include MoustacheCMS2::Taggable
 
   # attr_accessible :title,
   #                 :subheading,
