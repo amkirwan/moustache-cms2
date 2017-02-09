@@ -49,7 +49,7 @@ class Admin::PagesController < AdminBaseController
     assign_updated_by @page
     @page_title_was =  @page.title
     respond_with(:admin, @page) do |format|
-      if @page.update_attributes(params[:page]) 
+      if @page.update(page_params) 
         set_page_cookies if params[:continue]
         set_page_part if params[:continue]
         flash[:notice] = "Successfully updated the page #{@page.title}"
@@ -102,6 +102,10 @@ class Admin::PagesController < AdminBaseController
   end
 
   private 
+
+    def page_params
+      params.require(:page).permit(:parent_id, :title, :slug, :full_path, :breadcrumb, :editor_ids, :layout_id, :post_container, :tag_list, page_parts_attributes: [:id, :name, :content, :filter_name], custom_field_attributes: [:id, :name, :content ], current_state_attributes: [:id, :name], meta_tags_attributes: [:id, :title, :content])
+    end
 
     def set_page_part
       if params[:view]
